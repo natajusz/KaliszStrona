@@ -1,0 +1,216 @@
+/* Struktura strony*/
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("image/KaliszByDrone.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Dodaj tę właściwość */
+    transition: background-image 0.5s ease-in-out;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 0.625em; /* 10px */
+    z-index: 999;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 0.625em; /* 10px */
+    text-align: center;
+    z-index: 999;
+}
+
+
+/* Pasek nawigacji */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 0.625em; /* 10px */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 0.625em; /* 10px */
+}
+
+nav ul li a {
+text-transform: uppercase;
+}
+
+nav ul li span {
+    display: inline-block; /* Bez tego nie działa ::first-letter - https://stackoverflow.com/questions/7631722/css-first-letter-not-working */
+}
+    
+
+.nav-entry::first-letter {
+font-size: 1.4em; /* Możesz dostosować rozmiar pierwszej litery według potrzeb */
+} 
+
+nav ul li a:visited {
+color: inherit;
+}
+  
+.nav-box {
+    display: none;
+    cursor: pointer;
+    padding: 0.625em; /* 10px */
+}
+
+.sticky-button {
+    position: fixed;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3.125em; /* 50px */
+    height: 3.125em; /* 50px */
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+
+.sticky-button i {
+    font-size: 1.5em; /* 24px */
+    position: relative;
+    top:0.6em;
+}
+
+/* Tła sekcji - do dynamicznej zmiany przy pomocy jscript */
+.background0 {
+    --background-image: url("image/KaliszByDrone.jpg");
+}
+
+.background1 {
+    --background-image: url("image/SzpitalByDrone.jpg");
+}
+
+.background2 {
+    --background-image: url("image/TeatrByDrone.jpg");
+}
+
+.background3 {
+    --background-image: url("image/BetonByDrone.jpg");
+}
+
+.building-table { /* Tabela ze streszczeniem zawartości strony */
+    width: 60%;
+    margin: 0 auto;
+    border-collapse: separate; /* Rozdziela obramowanie wewnątrz i na zewnątrz */
+    border-spacing: 5px; /* Określa odstęp między komórkami */
+}
+  
+  .building-table th, .building-table td {
+    border: 1px solid #000; /* Ustawia pojedyncze obramowanie wewnątrz tabeli */
+}
+  
+  .building-table {
+    border: 2px solid #000; /* Ustawia podwójne obramowanie na zewnątrz tabeli */
+}
+
+.building-image {
+    width: 400px;
+    height: 300px;
+  }
+
+/* Css dla poprawnego zachowania poziomych sekcji strony */
+
+.flexbox { /* Flexbox do wyrównania stron z 1 sekcją (tak żeby nie można ich było scrollować) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 100%;
+  }
+
+
+section { 
+    padding: 3.125em; /* 50px */
+    text-align: left;
+    margin-top: 10%;
+    margin-bottom: 30%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie poziome */
+    width: 100%;
+}
+
+section ~ section { 
+    margin-top: 30%;
+}
+
+section:last-of-type 
+{
+    margin-bottom: 60%;
+
+}
+
+section.centered-section /*Nadpisanie marginesu dla stron z 1 sekcją*/
+{
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+section .image_container 
+{
+    float: left; 
+    margin-right: 10px;
+}
+
+.image_container img
+{
+    border: 3px double black;
+
+}
+
+section .selfie_container
+{
+    float: left; 
+    margin-right: 10px;
+    shape-outside: circle(50%);
+
+}
+
+.selfie_container img
+{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px double rgb(211, 82, 189);
+
+}
+
+
+
+section .image_container ~ .image_container
+{
+    float: right; 
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+.section-content
+{
+    width: 60%;
+}
