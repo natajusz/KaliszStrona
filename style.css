@@ -153,7 +153,6 @@ section {
     background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: center; /* Wyśrodkowanie poziome */
-    width: 100%;
 }
 
 section ~ section { 
@@ -170,6 +169,7 @@ section.centered-section /*Nadpisanie marginesu dla stron z 1 sekcją*/
 {
     margin-top: 0%;
     margin-bottom: 0%;
+    width: 100%;
 }
 
 section .image_container 
