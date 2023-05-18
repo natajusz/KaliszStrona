@@ -1,8 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { /* Upewniam się że strona jest poprawnie załadowana w przeglądarce */
 
     /* Zmiana tła w zależności od sekcji */
-    const sections = document.querySelectorAll('section');
-
     function setActiveSection() {
         const sections = document.querySelectorAll('section');
         const scrollPosition = window.pageYOffset;
@@ -12,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const sectionHeight = section.offsetHeight;
       
           if (scrollPosition >= sectionTop - window.innerHeight / 2 && scrollPosition < sectionTop + sectionHeight - window.innerHeight / 2) {
-            const sectionId = section.getAttribute('id');
             const sectionStyle = window.getComputedStyle(section);
             const backgroundImage = sectionStyle.getPropertyValue('--background-image');
       
@@ -23,6 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
       
-      window.addEventListener('scroll', setActiveSection);
+      window.addEventListener('scroll', setActiveSection); /* Dodawanie nasłuchwania z standardową funkcją */
 
   });

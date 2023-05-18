@@ -5,7 +5,7 @@ body {
     background-image: url("image/KaliszByDrone.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Dodaj tę właściwość */
+    background-attachment: fixed;
     transition: background-image 0.5s ease-in-out;
 }
 
@@ -148,21 +148,20 @@ color: inherit;
 section { 
     padding: 3.125em; /* 50px */
     text-align: left;
-    margin-top: 10%;
-    margin-bottom: 30%;
+    margin-top: 0%;
+    margin-bottom: 50%;
     background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: center; /* Wyśrodkowanie poziome */
 }
 
 section ~ section { 
-    margin-top: 30%;
+    margin-top: 50%;
 }
 
 section:last-of-type 
 {
     margin-bottom: 60%;
-
 }
 
 section.centered-section /*Nadpisanie marginesu dla stron z 1 sekcją*/
@@ -172,45 +171,41 @@ section.centered-section /*Nadpisanie marginesu dla stron z 1 sekcją*/
     width: 100%;
 }
 
-section .image_container 
+.section-content
+{
+    width: 60%;
+}
+
+.image_container 
 {
     float: left; 
     margin-right: 10px;
 }
 
-.image_container img
-{
-    border: 3px double black;
-
-}
-
-section .selfie_container
-{
-    float: left; 
-    margin-right: 10px;
-    shape-outside: circle(50%);
-
-}
-
-.selfie_container img
-{
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 5px double rgb(211, 82, 189);
-
-}
-
-
-
-section .image_container ~ .image_container
+.image_container ~ .image_container
 {
     float: right; 
     margin-left: 10px;
     margin-right: 0px;
 }
 
-.section-content
+.image_container img
 {
-    width: 60%;
+    border: 3px double black;
+}
+
+.selfie_container
+{
+    float: left; 
+    margin-right: 10px;
+    shape-outside: circle(50%); /*Sprawia że tekst opływa koło*/
+}
+
+.selfie_container img
+{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;  /*Sprawia że zdjęcie ma kształt koła*/
+    border: 5px double rgb(211, 82, 189);
+
 }

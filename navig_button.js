@@ -12,12 +12,11 @@ window.addEventListener('scroll', function() {
     }
   });
   
-//Ten event zapewnia że kod javascript nie uruchomi się przed utworzeniem zawartości strony (wtedy scrollButton jest jeszcze null)
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {  /* Upewniam się że strona jest poprawnie załadowana w przeglądarce */
     /* Przycisk powrotu do góry strony */
     const scrollButton = document.getElementById('scrollButton');
     
-    scrollButton.addEventListener('click', () => {
+    scrollButton.addEventListener('click', () => { /* Dodawanie nasłuchwania z funkcja lambda */
       window.scrollTo({
         top: 0,
         left: 0,
